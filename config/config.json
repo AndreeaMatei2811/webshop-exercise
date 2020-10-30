@@ -1,0 +1,7 @@
+{
+  "development": {
+    "url": "postgres://amsnctza:aPZYOlkVSvk5gR3Fzc-OVvRWuV9g0zoD@rogue.db.elephantsql.com:5432/amsnctza",
+    "dialect": "postgres",
+    "operatorsAliases": "0"
+  }
+}
