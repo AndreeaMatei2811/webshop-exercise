@@ -1,7 +1,19 @@
 const { Router } = require("express");
+const category = require("../models/category");
 const Product = require("../models").product;
+const Category = require("../models").category;
 
 const router = new Router();
+
+router.get("/categories", async (req, res, next) => {
+  try {
+    // res.send("Hallo");
+    const products = await Product.findAll({ include: Category });
+    res.json(products);
+  } catch (e) {
+    next(e);
+  }
+});
 
 router.post("/", async (req, res, next) => {
   try {
@@ -22,8 +34,8 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-router.get("/", (req, res) => {
-  res.send("hello");
-});
+// router.get("/", (req, res) => {
+//   res.send("hello");
+// });
 
 module.exports = router;
