@@ -9,15 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       product.belongsTo(models.category);
-      // define association here
     }
   }
   product.init(
     {
       name: DataTypes.STRING,
-      priceInCents: DataTypes.INTEGER,
       picture: DataTypes.STRING,
       description: DataTypes.STRING,
+      priceInCents: DataTypes.INTEGER,
       categoryId: DataTypes.INTEGER,
     },
     {

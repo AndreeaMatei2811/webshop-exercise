@@ -5,8 +5,7 @@ const customerRouter = require("./routers/customer");
 const productRouter = require("./routers/product");
 const categoryRouter = require("./routers/category");
 
-const PORT = 4000;
-
+const PORT = 4500;
 app.use(jsonParser);
 
 app.use("/customers", customerRouter);
