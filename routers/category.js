@@ -1,11 +1,14 @@
 const { Router } = require("express");
 const router = new Router();
 const Customer = require("../models").customer;
+const Product = require("../models").product;
 const Category = require("../models").category;
 
 router.get("/", async (req, res, next) => {
   try {
-    const categories = await Category.findAll();
+    const categories = await Category.findAll({
+      include: [{ model: Product }],
+    });
     res.json(categories);
   } catch (e) {
     next(e);

@@ -4,6 +4,16 @@ const Category = require("../models").category;
 
 const router = new Router();
 
+router.get("/", async (req, res, next) => {
+  try {
+    // res.send("Hallo");
+    const products = await Product.findAll();
+    res.json(products);
+  } catch (e) {
+    next(e);
+  }
+});
+
 router.get("/categories", async (req, res, next) => {
   try {
     // res.send("Hallo");
